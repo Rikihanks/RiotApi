@@ -1,11 +1,7 @@
 import io.github.rikihanks.riotApi.base.RiotApi;
 import io.github.rikihanks.riotApi.base.RiotApiProvider;
-import io.github.rikihanks.riotApi.config.Configuration;
-import io.github.rikihanks.riotApi.model.AccountDto;
-import io.github.rikihanks.riotApi.model.ActiveShardDto;
+import io.github.rikihanks.riotApi.model.account.ActiveShardDto;
 import io.github.rikihanks.riotApi.model.common.GameId;
-
-import java.util.Properties;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package io.github.rikihanks.riotApi.model;
+package io.github.rikihanks.riotApi.model.account;
 
 public class ActiveShardDto {
 

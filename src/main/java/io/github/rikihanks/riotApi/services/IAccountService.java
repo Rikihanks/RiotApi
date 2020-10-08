@@ -1,7 +1,7 @@
 package io.github.rikihanks.riotApi.services;
 
-import io.github.rikihanks.riotApi.model.AccountDto;
-import io.github.rikihanks.riotApi.model.ActiveShardDto;
+import io.github.rikihanks.riotApi.model.account.AccountDto;
+import io.github.rikihanks.riotApi.model.account.ActiveShardDto;
 import io.github.rikihanks.riotApi.model.common.GameId;
 
 public interface IAccountService {
