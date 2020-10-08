@@ -9,11 +9,6 @@ import io.github.rikihanks.riotApi.model.common.GameId;
 import io.github.rikihanks.riotApi.services.IAccountService;
 import io.github.rikihanks.riotApi.utility.HttpUtil;
 import org.apache.http.HttpEntity;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
@@ -38,10 +33,30 @@ public class AccountService implements IAccountService {
     }
 
     public AccountDto getAccountByRiotId(String riotId, String tagLine) {
-        return null;
+        AccountDto account = null;
+        try {
+            String url = Configuration.getConfigByValue(ConfigValues.V1_ACCOUTS_BY_PUUID)
+                    .replace("{gameName}", riotId)
+                    .replace("{tagLine}", tagLine);
+            HttpEntity entity = HttpUtil.doGet(url , apiKey);
+            account = mapper.readValue(EntityUtils.toString(entity), AccountDto.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return account;
     }
 
     public ActiveShardDto getActiveShardByPuuId(String puuId, GameId id) {
-        return null;
+        ActiveShardDto activeShardDto = null;
+        try {
+            String url = Configuration.getConfigByValue(ConfigValues.V1_ACCOUNTS_ACTIVESHARDS_BY_GAME)
+                    .replace("{game}", id.name())
+                    .replace("{puuid}", puuId);
+            HttpEntity entity = HttpUtil.doGet(url , apiKey);
+            activeShardDto = mapper.readValue(EntityUtils.toString(entity), ActiveShardDto.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return activeShardDto;
     }
 }
