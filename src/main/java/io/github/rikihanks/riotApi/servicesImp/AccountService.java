@@ -12,13 +12,11 @@ import org.apache.http.HttpEntity;
 import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
-public class AccountService implements IAccountService {
+public class AccountService extends BaseService implements IAccountService {
 
-    private String apiKey;
-    private ObjectMapper mapper = new ObjectMapper();
 
     public AccountService(String apiKey) {
-        this.apiKey = apiKey;
+        super(apiKey);
     }
 
     public AccountDto getAccountByPuuId(String puuId) {

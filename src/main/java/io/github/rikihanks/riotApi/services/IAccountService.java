@@ -11,7 +11,7 @@ public interface IAccountService {
      * @param puuId The puuid asociated to the account
      * @return AccountDto
      */
-    public AccountDto getAccountByPuuId(String puuId);
+     AccountDto getAccountByPuuId(String puuId);
 
     /**
      *
@@ -19,7 +19,7 @@ public interface IAccountService {
      * @param tagLine The account's tagLine, ex: #EUW
      * @return
      */
-    public AccountDto getAccountByRiotId(String riotId, String tagLine);
+     AccountDto getAccountByRiotId(String riotId, String tagLine);
 
     /**
      *
@@ -27,5 +27,5 @@ public interface IAccountService {
      * @param id The GameId. Values can be retrieved using the GameId enum.
      * @return
      */
-    public ActiveShardDto getActiveShardByPuuId(String puuId, GameId id);
+     ActiveShardDto getActiveShardByPuuId(String puuId, GameId id);
 }
